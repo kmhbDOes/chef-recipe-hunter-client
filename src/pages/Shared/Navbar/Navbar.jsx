@@ -10,7 +10,11 @@ const Header = () => {
       <div className="flex justify-between items-center">
         <div>
           <Link to="/" className="text-2xl md:text-4xl font-bold">
-            FoodJunction
+            <img
+              className="w-32 h-32"
+              src="https://i.ibb.co/RDZmDx0/logo-color.png"
+              alt=""
+            />
           </Link>
         </div>
         <div className="hidden md:flex justify-around gap-x-3 text-xl">
@@ -20,12 +24,12 @@ const Header = () => {
           >
             Home
           </NavLink>
-          <Link
+          <NavLink
             to="/blog"
             className={({ isActive }) => (isActive ? "active" : "default")}
           >
             Blog
-          </Link>
+          </NavLink>
         </div>
         <div className="hidden md:inline-block text-3xl">
           <img
