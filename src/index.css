@@ -6,6 +6,14 @@
   @apply tracking-wide text-red-600 font-bold transition-colors duration-200 animate-pulse;
 }
 
+.banner {
+  @apply bg-cover bg-center;
+  background-image: url("https://wallpapershome.com/images/pages/pic_h/17860.jpg");
+}
+.banner-bg {
+  @apply banner m-0 p-0;
+}
+
 .default {
   @apply tracking-wide text-gray-700 transition-colors duration-200 hover:text-gray-600;
 }
