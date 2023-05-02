@@ -75,17 +75,11 @@ const Login = () => {
         </div>
         <div class="flex items-center justify-between">
           <button
-            class="  animate-bounce bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            class="mx-auto animate-bounce bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Sign Up
           </button>
-          <a
-            class="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800"
-            href="#"
-          >
-            Forgot Password?
-          </a>
         </div>
         <p className="text-center py-2">
           Registered Already? <br />
