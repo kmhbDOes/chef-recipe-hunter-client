@@ -14,9 +14,10 @@
   @apply banner m-0 p-0;
 }
 
-.glow {
-  animation: glowing 1500ms infinite;
+.btn-rec {
+  @apply bg-red-500 px-4 md:px-4 text-white text-lg rounded-full;
 }
+
 .default {
   @apply tracking-wide text-gray-700 transition-colors duration-200 hover:text-gray-600;
 }

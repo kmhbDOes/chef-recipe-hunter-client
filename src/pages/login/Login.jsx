@@ -1,10 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
+  const { handleGoogleSignIn, signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div class="w-full max-w-xs mx-auto">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border">
+      <form
+        onSubmit={handleLogin}
+        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border"
+      >
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
             Email
@@ -63,7 +90,7 @@ const Login = () => {
             </Link>
           </div>
           <div>
-            <Link to="">
+            <Link onClick={handleGoogleSignIn} to="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
