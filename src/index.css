@@ -8,7 +8,7 @@
 
 .banner {
   @apply bg-cover bg-center;
-  background-image: url("https://wallpapershome.com/images/pages/pic_h/17860.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2015/04/10/00/41/food-715542_960_720.jpg");
 }
 .banner-bg {
   @apply banner m-0 p-0;

@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="py-4">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-x-4 py-6 banner rounded-lg">
-        <div className="text-left bg-sky-500 rounded-lg p-3">
+        <div className="text-left bg-green-500 rounded-lg p-3">
           <p>
             <span className="text-white font-bold text-3xl  ">
               We all need <span className=" animate-ping">food</span> to live
@@ -23,8 +23,8 @@ const Banner = () => {
         </div>
         <div>
           <img
-            className="w-80 h-96 rounded-lg"
-            src="https://www.simplyrecipes.com/thmb/jrYzfC0QitH7jZa-uGAcSm1NHjg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2020__10__Royal-Icing-Cookies-LEAD-25-622b9f795b944d9d965ae88e824d6e4a.jpg"
+            className="w-96 h-96 rounded-lg"
+            src="https://cdn.pixabay.com/photo/2015/09/22/15/37/chinese-food-951889_960_720.jpg"
             alt=""
           />
         </div>
