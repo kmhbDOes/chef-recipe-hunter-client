@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active {
-  @apply tracking-wide text-red-700 transition-colors duration-200;
+  @apply tracking-wide text-red-600 font-bold transition-colors duration-200 animate-pulse;
 }
 
 .default {

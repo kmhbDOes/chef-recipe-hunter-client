@@ -9,9 +9,9 @@ const Header = () => {
       {/* Navbar */}
       <div className="flex justify-between items-center">
         <div>
-          <Link to="/" className="text-2xl md:text-4xl font-bold">
+          <Link to="/" className="text-2xl md:text-4xl font-bold ">
             <img
-              className="w-32 h-32"
+              className="w-32 h-32 hover:animate-bounce"
               src="https://i.ibb.co/RDZmDx0/logo-color.png"
               alt=""
             />
