@@ -59,6 +59,9 @@ const Header = () => {
               </Link>
             )}
           </NavLink>
+          <div className="hidden hover:inline-block text-black">
+            {user ? <span>{user.email} </span> : "wdw"}
+          </div>
         </div>
 
         {/* Mobile Nav */}

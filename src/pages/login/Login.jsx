@@ -26,6 +26,16 @@ const Login = () => {
         console.log(error);
       });
   };
+
+  const googleSignIn = () => {
+    handleGoogleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div class="w-full max-w-xs mx-auto">
       <form
@@ -90,7 +100,7 @@ const Login = () => {
             </Link>
           </div>
           <div>
-            <Link onClick={handleGoogleSignIn} to="">
+            <Link onClick={googleSignIn} to="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
