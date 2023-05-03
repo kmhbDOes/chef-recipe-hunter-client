@@ -31,13 +31,13 @@ const ChefDetail = () => {
                   <h2>Experience: {chefsCard.yearsOfExperience} Years</h2>
                   <p>Recipes: {chefsCard.numberOfRecipes}</p>
                   <p>Likes :{chefsCard.likes}</p>
-                  <Link to="/chefrecipe">
+                  <Link to={`/chefrecipe/${chefsCard.id}`}>
                     <button className="btn-rec my-2">View Recipes</button>
                   </Link>
                   <div className="card-actions justify-end">
-                    {/* <Link to={`/destination/${destination.id}`}>
-                    <button className="btn btn-primary">Book Now</button>
-                  </Link> */}
+                    {/* <Link to={`/chefsCard/${chefsCard.id}`}>
+                      <button className="btn btn-primary">Book Now</button>
+                    </Link> */}
                   </div>
                 </div>
               </div>

@@ -34,9 +34,8 @@ const ChefRecipes = () => {
                   {/* <h2>Experience: {chefsCard.yearsOfExperience} Years</h2> */}
                   {/* <p>Recipes: {chefsCard.numberOfRecipes}</p> */}
                   {/* <p>Likes :{chefsCard.likes}</p> */}
-                  <Link to="/chefrecipe">
-                    <button className="btn-rec my-2">View Recipes</button>
-                  </Link>
+
+                  <button className="btn-rec my-2">Favorite</button>
                   <div className="card-actions justify-end">
                     {/* <Link to={`/destination/${destination.id}`}>
                     <button className="btn btn-primary">Book Now</button>
