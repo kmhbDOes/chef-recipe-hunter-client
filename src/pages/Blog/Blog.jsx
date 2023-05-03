@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();

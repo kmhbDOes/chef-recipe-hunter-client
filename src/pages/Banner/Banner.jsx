@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="py-4">
+    <div className="py-4 rounded-lg">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-x-4 py-6 banner rounded-lg">
         <div className="text-left bg-green-500 rounded-lg p-3">
           <p>
