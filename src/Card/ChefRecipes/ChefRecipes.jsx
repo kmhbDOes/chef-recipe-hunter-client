@@ -7,12 +7,12 @@ const ChefRecipes = () => {
   useEffect(() => {
     fetch("http://localhost:5000/recipeData")
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => setRecipes(data))
       .catch((error) => console.error(error));
 
     fetch("http://localhost:5000/chefData")
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => setChefs(data))
       .catch((error) => console.error(error));
   }, []);
   return (
