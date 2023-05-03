@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ChefRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [chefs, setChefs] = useState({});
+  const [clicked, setClicked] = useState(false);
   const [st, setSt] = useState(useParams);
+
+  const fav = () => {
+    toast("Added To Favorites");
+    setClicked(true);
+  };
+
   useEffect(() => {
     console.log(st.id);
     fetch("http://localhost:5000/recipeData")
@@ -64,7 +73,16 @@ const ChefRecipes = () => {
                   {/* <p>Recipes: {chefsCard.numberOfRecipes}</p> */}
                   {/* <p>Likes :{chefsCard.likes}</p> */}
 
-                  <button className="btn-rec my-2">Favorite</button>
+                  {
+                    <button
+                      onClick={fav}
+                      className="btn-rec my-2"
+                      disabled={clicked}
+                    >
+                      Favorite
+                    </button>
+                  }
+                  <ToastContainer></ToastContainer>
                   <div className="card-actions justify-end">
                     {/* <Link to={`/destination/${destination.id}`}>
                     <button className="btn btn-primary">Book Now</button>
