@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
   signOut,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
@@ -37,6 +38,18 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const updateUserProfile = (displayName, photoURL) => {
+    updateProfile(auth.currentUser, {})
+      .then((result) => {
+        const name = result.displayName;
+        const photo = result.photoURL;
+        console.log(name, photo);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const handleGoogleSignIn = () => {
     return signInWithPopup(auth, googleAuthProvider);
   };
@@ -63,6 +76,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     handleGoogleSignIn,
+    updateUserProfile,
   };
 
   return (

@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [error, setError] = useState([]);
 
   const handleRegister = (event) => {
@@ -13,7 +14,7 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    // const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/";
     if (password.length < 6) {
       setError("Password Too Weak");
     }
@@ -21,6 +22,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+        navigate(from, { replace: true });
         console.log(createdUser);
       })
       .catch((error) => {
