@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
       {/* Navbar */}
@@ -32,11 +39,26 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="hidden md:inline-block text-3xl">
-          <img
-            className="rounded-full w-10 h-10"
-            src="https://i.ibb.co/8jyPQ2r/Rectangle-27.png"
-            alt=""
-          />
+          <NavLink to="/login">
+            {user ? (
+              <button
+                className="btn-outlined bg-yellow-400 rounded-lg"
+                onClick={handleLogOut}
+                variant="secondary"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link to="/login">
+                <button
+                  className="btn-outlined bg-yellow-400 rounded-lg"
+                  variant="secondary"
+                >
+                  Login
+                </button>
+              </Link>
+            )}
+          </NavLink>
         </div>
 
         {/* Mobile Nav */}
