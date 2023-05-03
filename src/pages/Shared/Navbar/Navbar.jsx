@@ -46,7 +46,7 @@ const Header = () => {
                 onClick={handleLogOut}
                 variant="secondary"
               >
-                {user.displayName}
+                {user.email}
               </button>
             ) : (
               <Link to="/login">
