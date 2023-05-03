@@ -1,22 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ChefRecipes = () => {
   const [recipes, setRecipes] = useState([]);
-  const [chefs, setChefs] = useState([]);
+  const [chefs, setChefs] = useState({});
+  const [st, setSt] = useState(useParams);
   useEffect(() => {
+    console.log(st.id);
     fetch("http://localhost:5000/recipeData")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((error) => console.error(error));
 
-    fetch("http://localhost:5000/chefData")
+    fetch(`http://localhost:5000/chefData/${st.id}`)
       .then((res) => res.json())
       .then((data) => setChefs(data))
       .catch((error) => console.error(error));
+    console.log(chefs);
   }, []);
+
+  // function recipeItems() {
+  //   return recipes.map((c) => <li>{c.name}</li>);
+  // }
+  // function chefDetails() {
+  //   return recipes.map((c) => <li>{c.name}</li>);
+  // }
+
   return (
-    <>
+    <div>
+      <div className="">
+        <div className="card w-96 h-96 card-side bg-base-100 shadow-xl text-center rounded-lg md:text-left border-4 border-red-400 hover:border-red-600 py-2">
+          <figure>
+            <img
+              className="rounded-full w-56 h-56 mx-auto "
+              src={chefs.chefImage}
+              alt="Movie"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{chefs.chefName}</h2>
+            <p>Click the button to watch on Jetflix app.</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Watch</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="grid grd-cols-1 md:grid-cols-3 gap-y-6 my-2">
         {recipes.map((recipe) => (
           <p key={recipe.id}>
@@ -25,7 +54,7 @@ const ChefRecipes = () => {
                 <figure>
                   <img
                     className="rounded-full w-56 h-56 mx-auto"
-                    src=""
+                    src={recipe.image}
                     alt="image"
                   />
                 </figure>
@@ -47,7 +76,7 @@ const ChefRecipes = () => {
           </p>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

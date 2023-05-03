@@ -19,10 +19,20 @@ const SectionTwo = () => {
             <span></span>
           </div>
           <div className="bg-white border-4 w-44 h-56 md:w-36 md:h-48 border-red-500 text-center rounded-lg border-solid">
+            <img
+              className="w-24 h-24 mx-auto my-4"
+              src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-hat-cook-icon-template-vector-png-image_6003620.jpg"
+              alt=""
+            />
             <span>637</span> <br />
             <span>Recipes</span>
           </div>
           <div className="bg-white border-4 w-44 h-56 md:w-36 md:h-48 border-red-500 text-center rounded-lg border-solid">
+            <img
+              className="w-24 h-24 mx-auto my-4"
+              src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-hat-cook-icon-template-vector-png-image_6003620.jpg"
+              alt=""
+            />
             <span>1241</span> <br />
             <span>Photos</span>
           </div>

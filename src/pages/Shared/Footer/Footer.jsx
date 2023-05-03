@@ -51,7 +51,7 @@ const Footer = () => {
             </svg>
           </div>
         </div>
-        <div className="text-center">
+        <div className="text-center font-bold">
           Eat Healthy <br />
           Stay Healthy
         </div>

@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       //   element: <ChefRecipes></ChefRecipes>,
       // },
       {
-        path: "chefrecipe/id",
+        path: "chefrecipe/:id",
         element: (
           <PrivateRoute>
             <ChefRecipes></ChefRecipes>

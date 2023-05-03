@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState([]);
 
@@ -28,6 +28,7 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
+    updateUserProfile();
   };
   return (
     <div class="w-full max-w-xs mx-auto">
