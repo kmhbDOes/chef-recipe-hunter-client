@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState([]);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -13,7 +14,9 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     // const from = location.state?.from?.pathname || "/";
-
+    if (password.length < 6) {
+      setError("Password Too Weak");
+    }
     console.log(email, password, photo, name);
     createUser(email, password)
       .then((result) => {
@@ -76,7 +79,7 @@ const Register = () => {
             placeholder="******************"
             required
           />
-          <p class="text-red-500 text-xs italic">Please choose a password.</p>
+          <p class="text-red-500 text-xs italic">{error}</p>
         </div>
 
         <div class="mb-6">

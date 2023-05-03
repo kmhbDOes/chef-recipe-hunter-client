@@ -46,7 +46,7 @@ const Header = () => {
                 onClick={handleLogOut}
                 variant="secondary"
               >
-                Logout
+                {user.displayName}
               </button>
             ) : (
               <Link to="/login">
@@ -60,7 +60,7 @@ const Header = () => {
             )}
           </NavLink>
           <div className="hidden hover:inline-block text-black">
-            {user ? <span>{user.email} </span> : "wdw"}
+            {user ? <span>{user.displayName} </span> : "wdw"}
           </div>
         </div>
 

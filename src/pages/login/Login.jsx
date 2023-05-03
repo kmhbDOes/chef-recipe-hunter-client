@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
   const { handleGoogleSignIn, signIn } = useContext(AuthContext);
+  const [loginError, setLoginError] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   console.log("login page location", location);
@@ -14,6 +15,8 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+    // const displayName = form.name.value;
+    // const photoURL = user.photoURL;
     console.log(email, password);
 
     signIn(email, password)
@@ -24,6 +27,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setLoginError(error.message);
       });
   };
 
@@ -70,7 +74,7 @@ const Login = () => {
             placeholder="******************"
             required
           />
-          <p class="text-red-500 text-xs italic">Please choose a password.</p>
+          <p class="text-red-500 text-xs italic">{loginError}</p>
         </div>
         <div class="flex items-center justify-between">
           <button

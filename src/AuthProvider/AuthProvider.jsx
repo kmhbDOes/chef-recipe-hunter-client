@@ -40,6 +40,9 @@ const AuthProvider = ({ children }) => {
   const handleGoogleSignIn = () => {
     return signInWithPopup(auth, googleAuthProvider);
   };
+  const handleGithubSignIn = () => {
+    //
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
