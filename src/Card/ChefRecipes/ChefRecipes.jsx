@@ -9,16 +9,11 @@ const ChefRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [chefs, setChefs] = useState({});
   const [loading, setLoading] = useState(true);
+  const [favourites, setFavourites] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [st, setSt] = useState(useParams);
 
-  const fav = () => {
-    toast("Added To Favorites");
-    setClicked(true);
-  };
-
   useEffect(() => {
-    console.log(st.id);
     fetch("https://chef-recipe-hunter-server-kmhbdoes.vercel.app/recipeData")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
@@ -30,15 +25,7 @@ const ChefRecipes = () => {
       .then((res) => res.json())
       .then((data) => setChefs(data))
       .catch((error) => console.error(error));
-    console.log(chefs);
   }, []);
-
-  // function recipeItems() {
-  //   return recipes.map((c) => <li>{c.name}</li>);
-  // }
-  // function chefDetails() {
-  //   return recipes.map((c) => <li>{c.name}</li>);
-  // }
 
   useEffect(() => {
     // Simulating a delay of 2 seconds to simulate data loading
@@ -46,6 +33,11 @@ const ChefRecipes = () => {
       setLoading(false);
     }, 700);
   }, []);
+
+  const fav = () => {
+    toast("Added To Favorites");
+    setClicked(true);
+  };
 
   return (
     <>
@@ -69,10 +61,16 @@ const ChefRecipes = () => {
                     {chefs.chefName}
                   </h2>
                   <p className="my-4"> {chefs.shortDescription}</p>
-                  <p className="my-4">Recipes: {chefs.numberOfRecipes}</p>
-                  <p className="my-4">Likes: {chefs.likes}</p>
+                  <p className="my-4">
+                    <span className="font-bold">Recipes: </span>
+                    {chefs.numberOfRecipes}
+                  </p>
+                  <p className="my-4">
+                    <span className="font-bold">Likes: </span> {chefs.likes}
+                  </p>
                   <h2 className="my-4">
-                    Experience: {chefs.yearsOfExperience} Years
+                    <span className="font-bold">Experience : </span>
+                    {chefs.yearsOfExperience} Years
                   </h2>
                 </div>
               </div>
@@ -98,11 +96,11 @@ const ChefRecipes = () => {
                         </p>
                         <p>
                           <span className="font-bold">Ingredients: </span>
-                          {recipe.ingredients[0]}
+                          {recipe.ingredients}
                         </p>
                         <p>
                           <span className="font-bold">Cooking: </span>
-                          {recipe.cooking_method}
+                          {recipe.cooking_method.slice(0, 5)}
                         </p>
                         <p className="flex justify-center md:justify-start my-2 ">
                           <FaStar />
@@ -120,12 +118,12 @@ const ChefRecipes = () => {
                             Favorite
                           </button>
                         }
-                        <ToastContainer></ToastContainer>
                       </div>
                     </div>
                   </div>
                 </p>
               ))}
+              <ToastContainer></ToastContainer>
             </div>
           </div>
         </>

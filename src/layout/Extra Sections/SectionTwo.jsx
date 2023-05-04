@@ -43,7 +43,7 @@ const SectionTwo = () => {
             />
             <span className="animate-pulse text-red-500 font-semibold">
               1241
-            </span>{" "}
+            </span>
             <br />
             <span>Photos</span>
           </div>

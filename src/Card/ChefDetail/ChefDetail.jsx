@@ -29,12 +29,19 @@ const ChefDetail = () => {
                   </LazyLoad>
                 </figure>
                 <div className="card-body mx-4 py-2 ">
-                  <h2 className="card-title font-semibold">
-                    {chefsCard.chefName}
+                  <h2 className="card-title font-bold">{chefsCard.chefName}</h2>
+                  <h2>
+                    <span className="font-semibold">Experience : </span>
+                    {chefsCard.yearsOfExperience} Years
                   </h2>
-                  <h2>Experience: {chefsCard.yearsOfExperience} Years</h2>
-                  <p>Recipes: {chefsCard.numberOfRecipes}</p>
-                  <p>Likes :{chefsCard.likes}</p>
+                  <p>
+                    <span className="font-semibold">Recipes : </span>
+                    {chefsCard.numberOfRecipes}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Likes : </span>
+                    {chefsCard.likes}
+                  </p>
                   <Link to={`/chefrecipe/${chefsCard.id}`}>
                     <button className="btn-rec my-2">View Recipes</button>
                   </Link>
