@@ -12,8 +12,8 @@ const SectionTwo = () => {
         <div className="flex flex-col md:flex-row justify-center items-center gap-y-5 md:gap-x-20">
           <div className="bg-white border-4 w-44 h-56 md:w-36 md:h-48  border-red-500 text-center rounded-lg border-solid">
             <img
-              className="w-24 h-24 mx-auto my-4"
-              src="https://png.pngtree.com/png-clipart/20210312/original/pngtree-black-line-cartoon-chef-hat-png-image_6065060.jpg"
+              className="rounded-lg w-24 h-24 mx-auto my-4"
+              src="https://t3.ftcdn.net/jpg/00/82/64/02/360_F_82640281_tNwiPB8uf172EaYQEuAkMWx6qkBnuCAd.jpg"
               alt=""
             />
             <span className="animate-pulse text-red-500 font-semibold duration-1000">
@@ -25,7 +25,7 @@ const SectionTwo = () => {
           </div>
           <div className="bg-white border-4 w-44 h-56 md:w-36 md:h-48 border-red-500 text-center rounded-lg border-solid">
             <img
-              className="w-24 h-24 mx-auto my-4"
+              className="rounded-lg w-24 h-24 mx-auto my-4"
               src="https://cdn-icons-png.flaticon.com/512/3565/3565418.png"
               alt=""
             />
@@ -37,8 +37,8 @@ const SectionTwo = () => {
           </div>
           <div className="bg-white border-4 w-44 h-56 md:w-36 md:h-48 border-red-500 text-center rounded-lg border-solid">
             <img
-              className="w-24 h-24 mx-auto my-4"
-              src="https://p.kindpng.com/picc/s/33-330114_enterprise-album-icon-photo-album-png-transparent-png.png"
+              className="rounded-lg w-24 h-24 mx-auto my-4"
+              src="https://static.vecteezy.com/system/resources/previews/004/511/733/original/camera-icon-on-white-background-vector.jpg"
               alt=""
             />
             <span className="animate-pulse text-red-500 font-semibold">
