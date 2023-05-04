@@ -33,8 +33,9 @@ const ChefRecipes = () => {
     }, 700);
   }, []);
 
-  const fav = () => {
+  const fav = (id) => {
     toast("Added To Favorites");
+    setFavourites([...favourites, id]);
     setClicked(true);
   };
 

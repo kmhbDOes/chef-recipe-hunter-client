@@ -47,11 +47,6 @@ const ChefDetail = () => {
                   <Link to={`/chefrecipe/${chefsCard.id}`}>
                     <button className="btn-rec my-2">View Recipes</button>
                   </Link>
-                  <div className="card-actions justify-end">
-                    {/* <Link to={`/chefsCard/${chefsCard.id}`}>
-                      <button className="btn btn-primary">Book Now</button>
-                    </Link> */}
-                  </div>
                 </div>
               </div>
             </div>
