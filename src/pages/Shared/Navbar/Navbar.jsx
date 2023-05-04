@@ -29,7 +29,7 @@ const Header = () => {
             to="/"
             className={({ isActive }) => (isActive ? "active" : "default")}
           >
-            Home
+            fj
           </NavLink>
           <NavLink
             to="/blog"
@@ -149,6 +149,15 @@ const Header = () => {
                       >
                         Blog
                       </Link>
+                    </li>
+                    <li>
+                      {user ? (
+                        <button onClick={handleLogOut}>Logout</button>
+                      ) : (
+                        <Link to="/login">
+                          <button>Login</button>
+                        </Link>
+                      )}
                     </li>
                   </ul>
                 </nav>

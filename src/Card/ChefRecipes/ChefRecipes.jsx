@@ -18,12 +18,14 @@ const ChefRecipes = () => {
 
   useEffect(() => {
     console.log(st.id);
-    fetch("http://localhost:5000/recipeData")
+    fetch("https://chef-recipe-hunter-server-kmhbdoes.vercel.app/recipeData")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((error) => console.error(error));
 
-    fetch(`http://localhost:5000/chefData/${st.id}`)
+    fetch(
+      `https://chef-recipe-hunter-server-kmhbdoes.vercel.app/chefData/${st.id}`
+    )
       .then((res) => res.json())
       .then((data) => setChefs(data))
       .catch((error) => console.error(error));

@@ -26,7 +26,7 @@ const SectionOne = () => {
           </div>
           <div>
             <img
-              className="rounded-full w-56 h-56 mx-auto hover:opacity-70 hover:animate-spin "
+              className="rounded-full w-56 h-56 mx-auto hover:opacity-70 "
               src="https://static.onecms.io/wp-content/uploads/sites/43/2022/05/26/8805-CrispyFriedChicken-mfs-3x2-072.jpg"
               alt=""
             />

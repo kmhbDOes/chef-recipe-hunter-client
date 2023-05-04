@@ -6,13 +6,13 @@ const ChefDetail = () => {
   const [chefs, setChefs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/chefData")
+    fetch("https://chef-recipe-hunter-server-kmhbdoes.vercel.app/chefData")
       .then((res) => res.json())
       .then((data) => setChefs(data))
       .catch((error) => console.error(error));
   }, []);
   return (
-    <>
+    <div>
       <p className="text-center py-4">Pick among the best cooks</p>
       <div className="grid grd-cols-1 md:grid-cols-3 gap-y-6 my-2">
         {chefs.map((chefsCard) => (
@@ -49,7 +49,7 @@ const ChefDetail = () => {
           </p>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
