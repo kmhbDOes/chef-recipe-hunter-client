@@ -1,7 +1,7 @@
 
 - 
 
-# Live Site Link : https://chef-recipe-hunter-95376.firebaseapp.com/
+# Live Site Link : https://chef-recipe-hunter-95376.web.app/
 
 + **Feature of FoodJunction Website**:
   - What is FoodJunction about:
