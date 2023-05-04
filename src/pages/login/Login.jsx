@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { handleGoogleSignIn, handleGithubSignIn, signIn, updateUserProfile } =
+  const { handleGoogleSignIn, handleGithubSignIn, signIn } =
     useContext(AuthContext);
   const [loginError, setLoginError] = useState([]);
   const navigate = useNavigate();
@@ -19,7 +19,6 @@ const Login = () => {
     // const displayName = form.name.value;
     // const photoURL = user.photoURL;
     console.log(email, password);
-    updateUserProfile();
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;

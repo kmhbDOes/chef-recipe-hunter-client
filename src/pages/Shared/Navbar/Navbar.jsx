@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
-const Header = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
@@ -40,7 +40,10 @@ const Header = () => {
         </div>
         <div className="hidden md:inline-block text-3xl">
           {user ? (
-            <button onClick={handleLogOut}>Logout {user.displayName}</button>
+            <button onClick={handleLogOut}>
+              Logout {user.displayName}
+              <img className="w-5 h-5" src={user.photoURL} alt="img" />{" "}
+            </button>
           ) : (
             <Link to="/login">
               <button>Login</button>
@@ -68,7 +71,6 @@ const Header = () => {
               </Link>
             )}
           </NavLink> */}
-          <div className="hidden hover:inline-block text-black"></div>
         </div>
 
         {/* Mobile Nav */}
@@ -169,4 +171,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
