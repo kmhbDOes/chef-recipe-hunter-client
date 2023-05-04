@@ -29,7 +29,7 @@ const Header = () => {
             to="/"
             className={({ isActive }) => (isActive ? "active" : "default")}
           >
-            fj
+            Home
           </NavLink>
           <NavLink
             to="/blog"
@@ -40,12 +40,13 @@ const Header = () => {
         </div>
         <div className="hidden md:inline-block text-3xl">
           {user ? (
-            <button onClick={handleLogOut}>Logout</button>
+            <button onClick={handleLogOut}>Logout {user.displayName}</button>
           ) : (
             <Link to="/login">
               <button>Login</button>
             </Link>
           )}
+          {<div></div>}
           {/* <NavLink to="/login">
             {user ? (
               <button
@@ -67,9 +68,7 @@ const Header = () => {
               </Link>
             )}
           </NavLink> */}
-          <div className="hidden hover:inline-block text-black">
-            {user ? <span>{user.displayName} </span> : "wdw"}
-          </div>
+          <div className="hidden hover:inline-block text-black"></div>
         </div>
 
         {/* Mobile Nav */}

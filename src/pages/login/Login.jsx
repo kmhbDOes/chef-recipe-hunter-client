@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { handleGoogleSignIn, signIn, updateUserProfile } =
+  const { handleGoogleSignIn, handleGithubSignIn, signIn, updateUserProfile } =
     useContext(AuthContext);
   const [loginError, setLoginError] = useState([]);
   const navigate = useNavigate();
@@ -34,6 +34,15 @@ const Login = () => {
 
   const googleSignIn = () => {
     handleGoogleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.log(error));
+  };
+  const githubSignIn = () => {
+    handleGithubSignIn()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
@@ -93,7 +102,7 @@ const Login = () => {
         </div>
         <div className="flex justify-center py-2 gap-x-4">
           <div>
-            <Link to="">
+            <Link onClick={githubSignIn} to="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

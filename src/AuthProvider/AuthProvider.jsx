@@ -2,11 +2,11 @@ import React, { createContext } from "react";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
-  updateProfile,
   signOut,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
@@ -20,8 +20,10 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  console.log(user);
 
   const googleAuthProvider = new GoogleAuthProvider();
+  const githubAuthProvider = new GithubAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -38,23 +40,23 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const updateUserProfile = (displayName, photoURL) => {
-    updateProfile(auth.currentUser, {})
-      .then((result) => {
-        const name = result.displayName;
-        const photo = result.photoURL;
-        console.log(name, photo);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const updateUserProfile = (displayName, photoURL) => {
+  //   updateProfile(auth.currentUser, {})
+  //     .then((result) => {
+  //       const name = result.displayName;
+  //       const photo = result.photoURL;
+  //       console.log(name, photo);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   const handleGoogleSignIn = () => {
     return signInWithPopup(auth, googleAuthProvider);
   };
   const handleGithubSignIn = () => {
-    //
+    return signInWithPopup(auth, githubAuthProvider);
   };
 
   useEffect(() => {
@@ -76,7 +78,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     handleGoogleSignIn,
-    updateUserProfile,
+    handleGithubSignIn,
   };
 
   return (

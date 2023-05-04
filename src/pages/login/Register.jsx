@@ -1,9 +1,10 @@
+import { updateProfile } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState([]);
 
@@ -24,11 +25,23 @@ const Register = () => {
         const createdUser = result.user;
         navigate(from, { replace: true });
         console.log(createdUser);
+        updateUserData(result.user, name, photo);
       })
       .catch((error) => {
         console.log(error);
       });
-    updateUserProfile();
+    const updateUserData = (user, name) => {
+      updateProfile(user, {
+        displayName: name,
+        photoURL: photo,
+      })
+        .then((res) => {
+          console.log("User Updated");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
   };
   return (
     <div class="w-full max-w-xs mx-auto">
