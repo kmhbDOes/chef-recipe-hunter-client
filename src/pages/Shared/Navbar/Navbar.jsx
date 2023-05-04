@@ -39,7 +39,14 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="hidden md:inline-block text-3xl">
-          <NavLink to="/login">
+          {user ? (
+            <button onClick={handleLogOut}>Logout</button>
+          ) : (
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          )}
+          {/* <NavLink to="/login">
             {user ? (
               <button
                 className="btn-outlined bg-yellow-400 rounded-lg"
@@ -59,7 +66,7 @@ const Header = () => {
                 </button>
               </Link>
             )}
-          </NavLink>
+          </NavLink> */}
           <div className="hidden hover:inline-block text-black">
             {user ? <span>{user.displayName} </span> : "wdw"}
           </div>
