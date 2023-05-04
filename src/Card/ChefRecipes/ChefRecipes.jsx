@@ -36,7 +36,7 @@ const ChefRecipes = () => {
   const fav = (id) => {
     toast("Added To Favorites");
     setFavourites([...favourites, id]);
-    setClicked(true);
+    // setClicked(true);
   };
 
   return (
@@ -111,9 +111,9 @@ const ChefRecipes = () => {
                         </p>
                         {
                           <button
-                            onClick={fav}
+                            onClick={() => fav(recipe.id)}
                             className="btn-rec my-4"
-                            disabled={clicked}
+                            disabled={favourites.includes(recipe.id)}
                           >
                             Favorite
                           </button>
