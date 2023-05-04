@@ -17,7 +17,7 @@ const Register = () => {
     const password = form.password.value;
     const from = location.state?.from?.pathname || "/login";
     if (password.length < 6) {
-      setError("Password Too Weak");
+      setError("Password Must be atleast 6 characters");
     }
     console.log(email, password, photo, name);
     createUser(email, password)

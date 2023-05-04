@@ -38,39 +38,35 @@ const Navbar = () => {
             Blog
           </NavLink>
         </div>
-        <div className="hidden md:inline-block text-3xl">
-          {user ? (
-            <button onClick={handleLogOut}>
-              Logout {user.displayName}
-              <img className="w-5 h-5" src={user.photoURL} alt="img" />{" "}
-            </button>
-          ) : (
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-          )}
-          {<div></div>}
-          {/* <NavLink to="/login">
+        <div className="hidden md:inline-block text-3xl flex justify-center ">
+          <div></div>
+          <div>
             {user ? (
-              <button
-                className="btn-outlined bg-yellow-400 rounded-lg"
-                onClick={handleLogOut}
-                variant="secondary"
-              >
-                {console.log(user)}
-                {user.displayName}
-              </button>
+              <div className="flex justify-center gap-x-4 mx-4 items-center">
+                <div>
+                  {user.photoURL ? (
+                    <img
+                      className="w-10 h-10 rounded-full hover:opacity-30"
+                      src={user.photoURL}
+                      title={user.displayName}
+                      alt="img"
+                    />
+                  ) : (
+                    "Image Unavailable"
+                  )}
+                </div>
+                <div>
+                  <button className="btn-rec" onClick={handleLogOut}>
+                    Logout
+                  </button>
+                </div>
+              </div>
             ) : (
               <Link to="/login">
-                <button
-                  className="btn-outlined bg-yellow-400 rounded-lg"
-                  variant="secondary"
-                >
-                  Login
-                </button>
+                <button className="btn-rec">Login</button>
               </Link>
             )}
-          </NavLink> */}
+          </div>
         </div>
 
         {/* Mobile Nav */}
@@ -151,15 +147,33 @@ const Navbar = () => {
                         Blog
                       </Link>
                     </li>
+
+                    <li>
+                      {user.photoURL ? (
+                        <img
+                          className="w-10 h-10 rounded-full hover:opacity-30"
+                          src={user.photoURL}
+                          title={user.displayName}
+                          alt="img"
+                        />
+                      ) : (
+                        "Image Unavailable"
+                      )}
+                    </li>
+
                     <li>
                       {user ? (
-                        <button onClick={handleLogOut}>Logout</button>
+                        <button className="btn-rec" onClick={handleLogOut}>
+                          Logout
+                        </button>
                       ) : (
                         <Link to="/login">
-                          <button>Login</button>
+                          <button className="btn-rec">Login</button>
                         </Link>
                       )}
                     </li>
+
+                    {/* Lists ends here */}
                   </ul>
                 </nav>
               </div>
