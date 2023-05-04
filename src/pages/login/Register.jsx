@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState([]);
 
@@ -15,7 +15,7 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/login";
     if (password.length < 6) {
       setError("Password Too Weak");
     }
@@ -26,6 +26,7 @@ const Register = () => {
         navigate(from, { replace: true });
         console.log(createdUser);
         updateUserData(result.user, name, photo);
+        logOut();
       })
       .catch((error) => {
         console.log(error);
