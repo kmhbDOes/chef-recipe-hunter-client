@@ -28,7 +28,6 @@ const ChefRecipes = () => {
   }, []);
 
   useEffect(() => {
-    // Simulating a delay of 2 seconds to simulate data loading
     setTimeout(() => {
       setLoading(false);
     }, 700);
@@ -53,7 +52,7 @@ const ChefRecipes = () => {
                   <img
                     className="w-56 h-56 rounded-full  mx-auto "
                     src={chefs.chefImage}
-                    alt="Movie"
+                    alt="image"
                   />
                 </figure>
                 <div className="card-body mx-4 text-2xl">

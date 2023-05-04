@@ -13,7 +13,9 @@ const ChefDetail = () => {
   }, []);
   return (
     <div>
-      <p className="text-center py-4">Pick among the best cooks</p>
+      <p className="text-center py-4 w-52 bg-red-500 rounded-lg text-white font-semibold mx-auto">
+        Pick among the best cooks
+      </p>
       <div className="grid grd-cols-1 md:grid-cols-3 gap-y-6 my-2">
         {chefs.map((chefsCard) => (
           <p key={chefsCard.id}>

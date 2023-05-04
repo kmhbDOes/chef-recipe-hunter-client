@@ -9,7 +9,6 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating a delay of 2 seconds to simulate data loading
     setTimeout(() => {
       setLoading(false);
     }, 500);
