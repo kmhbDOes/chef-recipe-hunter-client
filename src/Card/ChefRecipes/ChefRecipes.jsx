@@ -104,7 +104,7 @@ const ChefRecipes = () => {
                         </p>
                         <p>
                           <span className="font-bold">Cooking: </span>
-                          {recipe.cooking_method.slice(0, 5)}
+                          {recipe.cooking_method}
                         </p>
                         <p className="flex justify-center md:justify-start my-2 ">
                           <FaStar />
