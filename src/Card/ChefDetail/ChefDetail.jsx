@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
+import { FaThumbsUp } from "react-icons/fa";
 
 const ChefDetail = () => {
   const [chefs, setChefs] = useState([]);
@@ -40,9 +41,9 @@ const ChefDetail = () => {
                     <span className="font-semibold">Recipes : </span>
                     {chefsCard.numberOfRecipes}
                   </p>
-                  <p>
+                  <p className="flex gap-x-2">
                     <span className="font-semibold">Likes : </span>
-                    {chefsCard.likes}
+                    {chefsCard.likes} <FaThumbsUp />
                   </p>
                   <Link to={`/chefrecipe/${chefsCard.id}`}>
                     <button className="btn-rec my-2">View Recipes</button>

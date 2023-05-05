@@ -1,13 +1,21 @@
 import React from "react";
+import { FaHamburger } from "react-icons/fa";
 
 const Banner = () => {
   return (
     <div className="py-4 rounded-lg">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-y-4 md:gap-x-4 py-6 banner rounded-lg">
-        <div className="text-left text-xl rounded-lg p-3 bg-red-500 opacity-80 w-96 ">
-          <p className="">
+        <div className="text-center md:text-left text-xl rounded-lg p-3 bg-red-500 opacity-80 w-96 ">
+          <p>
             <span className="text-white font-bold text-3xl">
-              We all need food to live on! <br />
+              We all need
+              <span className="flex justify-center md:justify-start gap-x-1  mx-auto">
+                food
+                <span className="animate-pulse">
+                  <FaHamburger />
+                </span>
+              </span>
+              to live on! <br />
             </span>
             <span className="text-white font-semibold  rounded-lg">
               But different foods are also fascinating <br /> to learn about.

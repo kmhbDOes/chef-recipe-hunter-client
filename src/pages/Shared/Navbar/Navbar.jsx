@@ -18,7 +18,7 @@ const Navbar = () => {
         <div>
           <Link to="/" className="text-2xl md:text-4xl font-bold ">
             <img
-              className="w-32 h-32 hover:animate-bounce"
+              className="w-36 h-w-36 hover:animate-bounce"
               src="https://i.ibb.co/RDZmDx0/logo-color.png"
               alt=""
             />
@@ -102,8 +102,12 @@ const Navbar = () => {
                       title="FoodJunction"
                       className="inline-flex items-center"
                     >
-                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-200"></div>
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                      <img
+                        className="w-10 h-10 flex items-center justify-center rounded-full "
+                        src="https://i.ibb.co/RDZmDx0/logo-color.png"
+                        alt=""
+                      />
+                      <span className="ml-2 text-xl font-bold tracking-wide text-red-600 uppercase">
                         FoodJunction
                       </span>
                     </Link>

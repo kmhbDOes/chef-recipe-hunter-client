@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "../../layout/Spinner";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaThumbsUp } from "react-icons/fa";
 
 const ChefRecipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -65,8 +65,9 @@ const ChefRecipes = () => {
                     <span className="font-bold">Recipes: </span>
                     {chefs.numberOfRecipes}
                   </p>
-                  <p className="my-4">
+                  <p className="my-4 flex gap-x-2">
                     <span className="font-bold">Likes: </span> {chefs.likes}
+                    <FaThumbsUp />
                   </p>
                   <h2 className="my-4">
                     <span className="font-bold">Experience : </span>
@@ -75,6 +76,9 @@ const ChefRecipes = () => {
                 </div>
               </div>
             </div>
+            <p className="text-center py-4 w-52 bg-red-500 rounded-lg text-white font-semibold mx-auto">
+              Recipes from the chef
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 my-2 gap-x-8">
               {/* Recipe Cards */}
               {recipes.map((recipe) => (
