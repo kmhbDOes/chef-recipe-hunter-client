@@ -39,7 +39,6 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="hidden md:inline-block text-3xl flex justify-center ">
-          <div></div>
           <div>
             {user ? (
               <div className="flex justify-center gap-x-4 mx-4 items-center">
@@ -149,23 +148,26 @@ const Navbar = () => {
                     </li>
 
                     <li>
-                      {user.photoURL ? (
-                        <img
-                          className="w-10 h-10 rounded-full hover:opacity-30"
-                          src={user.photoURL}
-                          title={user.displayName}
-                          alt="img"
-                        />
-                      ) : (
-                        "Image Unavailable"
-                      )}
-                    </li>
-
-                    <li>
                       {user ? (
-                        <button className="btn-rec" onClick={handleLogOut}>
-                          Logout
-                        </button>
+                        <div className="flex justify-center gap-x-4 mx-4 items-center">
+                          <div>
+                            {user.photoURL ? (
+                              <img
+                                className="w-10 h-10 rounded-full hover:opacity-30"
+                                src={user.photoURL}
+                                title={user.displayName}
+                                alt="img"
+                              />
+                            ) : (
+                              "Image Unavailable"
+                            )}
+                          </div>
+                          <div>
+                            <button className="btn-rec" onClick={handleLogOut}>
+                              Logout
+                            </button>
+                          </div>
+                        </div>
                       ) : (
                         <Link to="/login">
                           <button className="btn-rec">Login</button>
