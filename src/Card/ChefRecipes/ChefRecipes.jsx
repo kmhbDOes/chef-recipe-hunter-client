@@ -10,7 +10,6 @@ const ChefRecipes = () => {
   const [chefs, setChefs] = useState({});
   const [loading, setLoading] = useState(true);
   const [favourites, setFavourites] = useState([]);
-  const [clicked, setClicked] = useState(false);
   const [st, setSt] = useState(useParams);
 
   useEffect(() => {
@@ -36,7 +35,6 @@ const ChefRecipes = () => {
   const fav = (id) => {
     toast("Added To Favorites");
     setFavourites([...favourites, id]);
-    // setClicked(true);
   };
 
   return (

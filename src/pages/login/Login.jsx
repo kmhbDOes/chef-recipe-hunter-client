@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { handleGoogleSignIn, handleGithubSignIn, signIn, user } =
+  const { handleGoogleSignIn, handleGithubSignIn, signIn } =
     useContext(AuthContext);
   const [loginError, setLoginError] = useState([]);
   const navigate = useNavigate();
